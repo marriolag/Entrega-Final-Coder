@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+
+{% block contenido %}
+    <h1 class="title">{{ post.title }}</h1>
+    <small>Posteado el {{ post.date_added }}</small>
+    <p><strong>{{ post.intro }}</strong></p>
+    {% if post.post_image %}
+    <img src="{{ post.post_image.url }}" height="70%" width="70%">
+    {% endif %}
+    <p>{{ post.body }}</p>
+{% endblock contenido %}

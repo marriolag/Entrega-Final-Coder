@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% block contenido %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% if mensaje %}
+<p style="color:rgb(1, 32, 145);">{{ mensaje }}</p>
+{% endif %}
+
+    {% for post in posts %}
+        <div class="post block">
+            <h2 class="subtitle">{{ post.title }}</h2>
+            <small>Posteado el {{ post.date_added }}</small>
+            <p>{{ post.intro }}</p>
+            <br>
+            {% if post.post_image %}
+            <img src="{{ post.post_image.url }}" height="70%" width="70%">
+            {% endif %}
+            <br>
+            <button>
+                <a href="{% url 'blog:post_detail' post.id %}">Conoce mas</a>
+            </button>
+            {% if user.is_authenticated %}
+            <button>
+                <a href="{% url 'blog:erase_post' post.id %}">Elimina Post</a>
+            </button>
+            <button>
+                <a href="{% url 'blog:edit_post' post.id %}">Edita Post</a>
+            </button>
+            {% endif %}
+        </div>
+        <br>
+    {% endfor %}
+{% endblock contenido %}

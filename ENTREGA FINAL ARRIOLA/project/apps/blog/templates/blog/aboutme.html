@@ -1,0 +1,10 @@
+{% extends 'blog/base.html' %}
+
+{% block contenido %}
+    <h1 class="title">Soy Manuel Arriola, de Colombia </h1>
+    <h3 class="tp final">Realizo la entrega del trabajo final</h3>
+    <small> Es un sitio web básico donde puedes compartir breves publicaciones.</small>
+    {% if post.post_image %}
+    <img src="{{ post.post_image.url }}">
+    {% endif %}
+{% endblock contenido %}

@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block contenido %}
+
+{% block title %}
+POSTEA
+{% endblock title %}
+
+    {% if miFormulario.errors %}
+    <p style="color:red;">ERROR - CORRIGELO PORFAVOR</p>
+    {% endif %}
+
+    <form action="" method="POST" enctype="multipart/form-data"> 
+        {% csrf_token %}
+        
+        <table>
+            {{ miFormulario.as_table}}
+        </table>
+        <input type="submit" value="Post it!">
+    </form>
+
+{% endblock contenido %}

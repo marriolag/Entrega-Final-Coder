@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% block contenido %}
+
+{% block title %}
+Edita Perfil
+{% endblock title %}
+
+<section class="mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>EDITA PERFIL</h1>
+                <h3>Usuario</h3>
+
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        {{ mi_form.as_table }}
+                    </table>
+                    <input type="submit" value="EDIT PROFILE">
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock contenido %}

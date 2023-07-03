@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+
+{% block contenido %}
+<h5 class="mb-5">(Ve a home para ver los ultimos posteos)</h5>
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <table>
+        {{ miPost.as_table }}
+    </table>
+    <input type="submit" value="Save Changes">
+
+</form>
+
+{% endblock contenido %}

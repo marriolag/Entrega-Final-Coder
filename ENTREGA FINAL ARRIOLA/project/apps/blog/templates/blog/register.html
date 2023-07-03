@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block contenido %}
+
+{% block title %}
+REGISTRATE
+{% endblock title %}
+
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+{% endblock contenido %}
